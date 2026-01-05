@@ -1,0 +1,552 @@
+index.html <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QCM Droit Romain</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+margin: 20px;
+background-color: #f4f4f4;
+color: #333;
+}
+.container {
+max-width: 800px;
+margin: auto;
+background: #fff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+color: #2c3e50;
+text-align: center;
+margin-bottom: 30px;
+}
+.question-block {
+margin-bottom: 25px;
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 5px;
+background-color: #fdfdfd;
+}
+.question-block p {
+font-weight: bold;
+margin-bottom: 15px;
+color: #34495e;
+}
+.options label {
+display: block;
+margin-bottom: 10px;
+cursor: pointer;
+padding: 8px;
+border-radius: 4px;
+transition: background-color 0.2s ease;
+}
+.options label:hover {
+background-color: #e9ecef;
+}
+.options input[type="radio"] {
+margin-right: 10px;
+}
+.submit-btn {
+display: block;
+width: 100%;
+padding: 15px 20px;
+background-color: #28a745;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+cursor: pointer;
+margin-top: 30px;
+transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+background-color: #218838;
+}
+.results {
+margin-top: 40px;
+padding: 20px;
+border-top: 2px solid #eee;
+background-color: #e2f0e9;
+border-radius: 8px;
+display: none; /* Hidden by default */
+}
+.results h2 {
+color: #2c3e50;
+margin-bottom: 20px;
+}
+.result-item {
+margin-bottom: 10px;
+}
+.correct {
+color: green;
+font-weight: bold;
+}
+.incorrect {
+color: red;
+font-weight: bold;
+}
+.correct-answer-display {
+font-style: italic;
+color: #007bff;
+margin-left: 10px;
+}
+.explanation {
+font-size: 0.9em;
+color: #555;
+margin-top: 5px;
+padding-left: 20px;
+border-left: 2px solid #ccc;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>QCM Interactif de Droit Romain</h1>
+<form id="qcmForm">
+<div class="question-block">
+<p>1. Durant le Bas-Empire romain, les représentants de la classe la plus pauvre sont</p>
+<div class="options">
+<label><input type="radio" name="q1" value="A"> A. Les potentiores</label>
+<label><input type="radio" name="q1" value="B"> B. Les humiliores</label>
+<label><input type="radio" name="q1" value="C"> C. Les honestiores</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>2. La définition classique de la notion d'obligation est celle du jurisconsulte</p>
+<div class="options">
+<label><input type="radio" name="q2" value="A"> A. Modestin</label>
+<label><input type="radio" name="q2" value="B"> B. Ulpien</label>
+<label><input type="radio" name="q2" value="C"> C. Paul</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>3. Les Institutes de Justinien sont</p>
+<div class="options">
+<label><input type="radio" name="q3" value="A"> A. un manuel destiné à l'usage des étudiants</label>
+<label><input type="radio" name="q3" value="B"> B. un recueil de constitutions impériales</label>
+<label><input type="radio" name="q3" value="C"> C. un recueil de jurisprudence</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>4. L'idée d'un code commun des obligations entre la France et l'Italie germa en</p>
+<div class="options">
+<label><input type="radio" name="q4" value="A"> A. 1860</label>
+<label><input type="radio" name="q4" value="B"> B. 1918</label>
+<label><input type="radio" name="q4" value="C"> C. 1945</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>5. Le Code de Justinien est</p>
+<div class="options">
+<label><input type="radio" name="q5" value="A"> A. un recueil de constitutions impériales</label>
+<label><input type="radio" name="q5" value="B"> B. un recueil de lois républicaines</label>
+<label><input type="radio" name="q5" value="C"> C. un recueil d'édits</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>6. Le droit romain se propage</p>
+<div class="options">
+<label><input type="radio" name="q6" value="A"> A. au XIIe siècle</label>
+<label><input type="radio" name="q6" value="B"> B. au XVe siècle</label>
+<label><input type="radio" name="q6" value="C"> C. au XVIIe siècle</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>7. On parle de furtum conceptum lorsque la chose est retrouvée</p>
+<div class="options">
+<label><input type="radio" name="q7" value="A"> A. Chez la victime</label>
+<label><input type="radio" name="q7" value="B"> B. Chez le voleur</label>
+<label><input type="radio" name="q7" value="C"> C. Chez un tiers</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>8. La notion de Synallagma est développée par</p>
+<div class="options">
+<label><input type="radio" name="q8" value="A"> A. Socrate</label>
+<label><input type="radio" name="q8" value="B"> B. Aristote</label>
+<label><input type="radio" name="q8" value="C"> C. Platon</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>9. La jurisprudence romaine est</p>
+<div class="options">
+<label><input type="radio" name="q9" value="A"> A. l'ensemble des décisions prises par le prêteur</label>
+<label><input type="radio" name="q9" value="B"> B. Les consultations rendues par les jurisconsultes</label>
+<label><input type="radio" name="q9" value="C"> C. l'ensemble des constitutions impériales</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>10. Panaetius est un</p>
+<div class="options">
+<label><input type="radio" name="q10" value="A"> A. aristotélicien</label>
+<label><input type="radio" name="q10" value="B"> B. chrétien</label>
+<label><input type="radio" name="q10" value="C"> C. stoïcien</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>11. Le nexum est un contrat</p>
+<div class="options">
+<label><input type="radio" name="q11" value="A"> A. par l'airain et la balance</label>
+<label><input type="radio" name="q11" value="B"> B. par la balance et le plomb</label>
+<label><input type="radio" name="q11" value="C"> C. par l'airain et les pièces</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>12. L'affaire des Fourches Caudines concerne</p>
+<div class="options">
+<label><input type="radio" name="q12" value="A"> A. La sponsio</label>
+<label><input type="radio" name="q12" value="B"> B. le mutuum</label>
+<label><input type="radio" name="q12" value="C"> C. Le nexum</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>13. La période du droit ancien commence en</p>
+<div class="options">
+<label><input type="radio" name="q13" value="A"> A. - 753</label>
+<label><input type="radio" name="q13" value="B"> B. - 326</label>
+<label><input type="radio" name="q13" value="C"> C. -146</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>14. La première compilation du droit romain est la loi</p>
+<div class="options">
+<label><input type="radio" name="q14" value="A"> A. des 12 Codes</label>
+<label><input type="radio" name="q14" value="B"> B. des 12 Tables</label>
+<label><input type="radio" name="q14" value="C"> C. des 10 Rouleaux</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>15. La loi Pesolania de cane concerne</p>
+<div class="options">
+<label><input type="radio" name="q15" value="A"> A. Les dommages causés par des chiens</label>
+<label><input type="radio" name="q15" value="B"> B. Les dommages causés par l'effondrement des bâtiments</label>
+<label><input type="radio" name="q15" value="C"> C. Les dommages causés par des chevaux</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>16. Dans la procédure des actions de la loi, les deux phases du procès sont</p>
+<div class="options">
+<label><input type="radio" name="q16" value="A"> A. la phase in jure</label>
+<label><input type="radio" name="q16" value="B"> B. la phase apud judicem</label>
+<label><input type="radio" name="q16" value="C"> C. la phase in vivo</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>17. L'hypothèque est une sûreté</p>
+<div class="options">
+<label><input type="radio" name="q17" value="A"> A. Réelle avec dépossession</label>
+<label><input type="radio" name="q17" value="B"> B. Personnelle</label>
+<label><input type="radio" name="q17" value="C"> C. Réelle sans dépossession</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>18. Le stellionat est</p>
+<div class="options">
+<label><input type="radio" name="q18" value="A"> A. Un contrat synallagmatique</label>
+<label><input type="radio" name="q18" value="B"> B. Une espèce de fraude</label>
+<label><input type="radio" name="q18" value="C"> C. Une novation par changement de débiteur</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>19. La procédure extraordinaire s'est développée</p>
+<div class="options">
+<label><input type="radio" name="q19" value="A"> A. au IIe siècle avant notre ère</label>
+<label><input type="radio" name="q19" value="B"> B. au IIIe siècle de notre ère</label>
+<label><input type="radio" name="q19" value="C"> C. au VIe siècle de notre ère</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>20. Le fur manifestus est</p>
+<div class="options">
+<label><input type="radio" name="q20" value="A"> A. le vol d'une poutre</label>
+<label><input type="radio" name="q20" value="B"> B. la légitime défense</label>
+<label><input type="radio" name="q20" value="C"> C. le flagrant délit</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>21. L'action civile en matière de mutuum fut introduite en</p>
+<div class="options">
+<label><input type="radio" name="q21" value="A"> A. 125 après Jésus-Christ</label>
+<label><input type="radio" name="q21" value="B"> B. 199 avant Jésus-Christ</label>
+<label><input type="radio" name="q21" value="C"> C. 238 avant Jésus-Christ</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>22. Le mot obligation apparaît dans la langue française en</p>
+<div class="options">
+<label><input type="radio" name="q22" value="A"> A. 1589</label>
+<label><input type="radio" name="q22" value="B"> B. 1235</label>
+<label><input type="radio" name="q22" value="C"> C. 1804</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>23. En droit romain l'obligation est sanctionnée par</p>
+<div class="options">
+<label><input type="radio" name="q23" value="A"> A. des actions in rem</label>
+<label><input type="radio" name="q23" value="B"> B. des actions in personam</label>
+<label><input type="radio" name="q23" value="C"> C. des actions intuitu personae</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>24. Les recueils de la codification justinienne sont</p>
+<div class="options">
+<label><input type="radio" name="q24" value="A"> A. le Digeste</label>
+<label><input type="radio" name="q24" value="B"> B. le Traité</label>
+<label><input type="radio" name="q24" value="C"> C. le Code</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>25. Les événements conduisant à la loi Poetelia Papiria sont relatés par</p>
+<div class="options">
+<label><input type="radio" name="q25" value="A"> A. Tite-Live</label>
+<label><input type="radio" name="q25" value="B"> B. Aulu-Gelle</label>
+<label><input type="radio" name="q25" value="C"> C. Cicéron</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>26. À Rome, la jurisprudence est</p>
+<div class="options">
+<label><input type="radio" name="q26" value="A"> A. La science des jurisconsultes</label>
+<label><input type="radio" name="q26" value="B"> B. Une source directe du droit</label>
+<label><input type="radio" name="q26" value="C"> C. un courant philosophique</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>27. L'expensilatio concerne</p>
+<div class="options">
+<label><input type="radio" name="q27" value="A"> A. Une novation par changement de créancier</label>
+<label><input type="radio" name="q27" value="B"> B. Une novation par ajout d'un second débiteur</label>
+<label><input type="radio" name="q27" value="C"> C. Une novation par changement de débiteur</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>28. Le libripens est</p>
+<div class="options">
+<label><input type="radio" name="q28" value="A"> A. Un compteur de pièces</label>
+<label><input type="radio" name="q28" value="B"> B. Un porteur de balance</label>
+<label><input type="radio" name="q28" value="C"> C. Le nom donné au voleur</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>29. Les éléments constitutifs de l'obligation sont</p>
+<div class="options">
+<label><input type="radio" name="q29" value="A"> A. La cause</label>
+<label><input type="radio" name="q29" value="B"> B. La contrainte</label>
+<label><input type="radio" name="q29" value="C"> C. L'objet</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>30. Le seul droit romain allégué en Occident, entre VIIe et le XIe siècle, est contenu dans</p>
+<div class="options">
+<label><input type="radio" name="q30" value="A"> A. Les lois royales</label>
+<label><input type="radio" name="q30" value="B"> B. Le Code de Justinien</label>
+<label><input type="radio" name="q30" value="C"> C. Le Bréviaire d'Alaric</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>31. Le nauticum foenus concerne</p>
+<div class="options">
+<label><input type="radio" name="q31" value="A"> A. Le transport de personnes</label>
+<label><input type="radio" name="q31" value="B"> B. L'activité bancaire</label>
+<label><input type="radio" name="q31" value="C"> C. Le transport de marchandises</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>32. La renaissance du droit romain se produit</p>
+<div class="options">
+<label><input type="radio" name="q32" value="A"> A. À l'Université de Padoue</label>
+<label><input type="radio" name="q32" value="B"> B. À l'Université de Pise</label>
+<label><input type="radio" name="q32" value="C"> C. À l'Université de Bologne</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>33. En France, la contrainte par corps en matière civile survécut jusqu'en</p>
+<div class="options">
+<label><input type="radio" name="q33" value="A"> A. 1857</label>
+<label><input type="radio" name="q33" value="B"> B. 1867</label>
+<label><input type="radio" name="q33" value="C"> C. 1957</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>34. Les recueils de la codification justinienne sont</p>
+<div class="options">
+<label><input type="radio" name="q34" value="A"> A. le Code</label>
+<label><input type="radio" name="q34" value="B"> B. le Digeste</label>
+<label><input type="radio" name="q34" value="C"> C. le Traité</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>35. L'idée de lien de droit entre deux personnes est révélée par</p>
+<div class="options">
+<label><input type="radio" name="q35" value="A"> A. Pomponius</label>
+<label><input type="radio" name="q35" value="B"> B. Ulpien</label>
+<label><input type="radio" name="q35" value="C"> C. Marc Aurèle</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>36. La loi Poetelia Papiria concerne</p>
+<div class="options">
+<label><input type="radio" name="q36" value="A"> A. la sponsio</label>
+<label><input type="radio" name="q36" value="B"> B. le nexum</label>
+<label><input type="radio" name="q36" value="C"> C. le furtum</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>37. À Rome, les premiers contrats consensuels concernent</p>
+<div class="options">
+<label><input type="radio" name="q37" value="A"> A. Le louage</label>
+<label><input type="radio" name="q37" value="B"> B. La vente</label>
+<label><input type="radio" name="q37" value="C"> C. Le prêt</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>38. La sponsio fut souvent utilisée</p>
+<div class="options">
+<label><input type="radio" name="q38" value="A"> A. En matière militaire</label>
+<label><input type="radio" name="q38" value="B"> B. En matière médicale</label>
+<label><input type="radio" name="q38" value="C"> C. En matière familiale</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>39. La vente est sanctionnée par des actions</p>
+<div class="options">
+<label><input type="radio" name="q39" value="A"> A. De droit bilatéral</label>
+<label><input type="radio" name="q39" value="B"> B. De bonne foi</label>
+<label><input type="radio" name="q39" value="C"> C. De droit strict</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>40. En droit classique et au Bas-Empire, coexistent deux sortes d'actions</p>
+<div class="options">
+<label><input type="radio" name="q40" value="A"> A. Les actions réipersécutoires</label>
+<label><input type="radio" name="q40" value="B"> B. Les actions pénales</label>
+<label><input type="radio" name="q40" value="C"> C. Les actions pures et simples</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>41. Le délit de rapine a été complété par le prêteur</p>
+<div class="options">
+<label><input type="radio" name="q41" value="A"> A. Cornelius</label>
+<label><input type="radio" name="q41" value="B"> B. Terentius Lucullus</label>
+<label><input type="radio" name="q41" value="C"> C. Sylla</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>42. Nous devons la transmission de l'unique manuscrit du Digeste</p>
+<div class="options">
+<label><input type="radio" name="q42" value="A"> A. Aux Napolitains</label>
+<label><input type="radio" name="q42" value="B"> B. Aux Florentins</label>
+<label><input type="radio" name="q42" value="C"> C. Aux Pisans</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>43. Le Bas-Empire commence en</p>
+<div class="options">
+<label><input type="radio" name="q43" value="A"> A. 535</label>
+<label><input type="radio" name="q43" value="B"> B. 284</label>
+<label><input type="radio" name="q43" value="C"> C. 476</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>44. Le délit d'injure concerne</p>
+<div class="options">
+<label><input type="radio" name="q44" value="A"> A. Les atteintes aux biens</label>
+<label><input type="radio" name="q44" value="B"> B. L'intégrité physique humaine</label>
+<label><input type="radio" name="q44" value="C"> C. Les malédictions et pratiques de sorcellerie</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>45. La sponsio fut utilisée</p>
+<div class="options">
+<label><input type="radio" name="q45" value="A"> A. Dans la guerre contre les Égyptiens</label>
+<label><input type="radio" name="q45" value="B"> B. Dans la guerre contre les Samnites</label>
+<label><input type="radio" name="q45" value="C"> C. Dans la guerre contre les Gaulois</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>46. Pour Otto von Gierke, les deux éléments de l'obligation sont</p>
+<div class="options">
+<label><input type="radio" name="q46" value="A"> A. La schuld</label>
+<label><input type="radio" name="q46" value="B"> B. Le verlobung</label>
+<label><input type="radio" name="q46" value="C"> C. La haftung</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>47. La notion classique de violence remonte au préteur</p>
+<div class="options">
+<label><input type="radio" name="q47" value="A"> A. Aquilius Gallus</label>
+<label><input type="radio" name="q47" value="B"> B. Julianus</label>
+<label><input type="radio" name="q47" value="C"> C. Octavius</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>48. Au Ve siècle avant notre ère, les proches sont jugés selon la procédure</p>
+<div class="options">
+<label><input type="radio" name="q48" value="A"> A. des actions civiles</label>
+<label><input type="radio" name="q48" value="B"> B. des actions de la loi</label>
+<label><input type="radio" name="q48" value="C"> C. des actions rurales</label>
+</div>
+</div>
+
+<div class="question-block">
+<p>49. Le nexum est un prêt</p>
+<div class="options">
+<label><input type="radio" name="q49" value="A"> A. De denrées</label>
+<label><input type="radio" name="q49" value="B"> B. D'argent</label>
+<label><input type="radio" name="q49" value="C"> C. D'esclaves</label>
+</div>
+</div>
+
+<div
